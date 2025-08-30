@@ -7,7 +7,7 @@ const ticketPages = [
         ticketSeat: '76',
         eventName:'',
         tourName: 'COLDPLAY: MUSIC OF THE SPHERES WORLD TOUR 2025',
-        ticketDatePlace: 'Wed, Aug 27, 5pm - Wembley Stadium'
+        ticketDatePlace: 'Sat, Aug 30, 5pm - Wembley Stadium'
     },
     {
         label:'General Admission',
@@ -17,7 +17,7 @@ const ticketPages = [
         ticketSeat: '77',
         eventName:'',
         tourName: 'COLDPLAY: MUSIC OF THE SPHERES WORLD TOUR 2025',
-        ticketDatePlace: 'Wed, Aug 27, 5pm - Wembley Stadium'
+        ticketDatePlace: 'Sat, Aug 30, 5pm - Wembley Stadium'
     }
 ]
 

@@ -14,7 +14,7 @@ const picture = [
   {
     mainImage: "/Assets/images/coldplay.jpg",
     eventName: "COLDPLAY: MUSIC OF THE SPHERES WORLD TOUR 2025",
-    eventDate: "Wed, 27 Aug 2025, 17:00 - Wembley Stadium",
+    eventDate: "Sat, 30 Aug 2025, 17:00 - Wembley Stadium",
     ticketNumber: "2 tickets",
     ticketIcon: "/Assets/icons/tickets.png",
   },

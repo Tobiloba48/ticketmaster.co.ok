@@ -8,11 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ticketmaster</title>
   </head>
-  <body class="bg-gray-100">
-  <main class="h-screen relative">
+  <body class="bg-gray-100 relative">
+  <main class="h-screen relative z-15">
     <header class="bg-black text-white px-5 py-3 flex justify-between gap-5">
       <div class="place-content-center">
-        <img id="menuImage" src="/Assets/icons/menu.png" alt="" class="h-5 w-5 object-cover">
+        <img src="/Assets/icons/menu.png" alt=""
+         class="h-5 w-5 object-cover" id="uploadMenu">
       </div>
       <div class="flex justify-center place-items-center gap-2">
         <P class="text-lg font-semibold text-center">My Events</P>
@@ -25,9 +26,57 @@
     <section id="upcoming"></section>
     <section id="picture"></section>  
   </main>
-    <div class="bg-black p-4 text-white font-bold w-20">
-      <a href="/ticketmaster.html">Go To</a>
-    </div>
+ 
+
+  <section class="place-items-center overflow-y-auto w-full bg-white p-3 hidden z-10 fixed bottom-0 left-0 top-0" id="uploadSection">
+        <div class="flex justify-between gap-10">
+            <h1 class="font-bold text-xl text-center">Ticket Details</h1>
+            <button class="font-semibold text-red-700 bg-red-300 px-2
+                text-center rounded-lg" id="close">
+                close
+            </button>
+        </div>
+        <form id="uploadForm" autocomplete="on">
+            <div class="py-2">
+                <label class="font-semibold">Ticket Image</label><br>
+                <input type="file" name="Ticket Image" accept="image/*"
+                class="w-full border-2 border-black px-2">
+            </div>
+            <div class="py-2">
+                <label class="font-semibold">Section</label><br>
+                <input type="text" name="Section"
+                class="w-full border-2 border-black px-2">
+            </div>
+            <div class="py-2">
+                <label class="font-semibold">Row</label><br>
+                <input type="text" name="Row"
+                class="w-full border-2 border-black px-2">
+            </div>
+            <div class="py-2">
+                <label class="font-semibold">Ticket Type</label><br>
+                <input type="text" name="Ticket Type"
+                class="w-full border-2 border-black px-2">
+            </div>
+            <div class="py-2">
+                <label class="font-semibold">Date and Place</label><br>
+                <input type="text" name="Date and Place"
+                class="w-full border-2 border-black px-2">
+            </div>
+            <div class="py-2">
+                <label class="font-semibold">Event Name</label><br>
+                <input type="text" name="Event Name"
+                class="w-full border-2 border-black px-2">
+            </div>
+
+            <button type="submit" class="font-bold bg-black text-white p-2 rounded-lg">Submit</button>
+        </form>
+
+        <div id="results"></div>
+   </section>
+
+
+    
    <script src="/upcoming.js"></script>
+   <script src="/upload.js"></script>
   </body>
 </html>

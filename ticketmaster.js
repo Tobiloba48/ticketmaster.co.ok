@@ -74,7 +74,7 @@ function eachTicket() {
         </div>
 
         <div class="">
-          <p class="text-black text-center font-semibold py-3">Loge Seating</p>
+          <p class="text-black text-center font-semibold py-3">${cardDetails.type}</p>
           <div class="bg-blue-600 mx-10 rounded flex justify-center gap-1 h-10 place-items-center">
             <img src="/Assets/images/barcode_scanner_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.png" alt="">
             <p class="font-semibold text-center py-3">View Ticket</p>

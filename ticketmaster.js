@@ -1,79 +1,41 @@
-const ticketPages = [
-    {
-        label:'General Admission',
-        ticketImage:"/Assets/images/coldplay.jpg",
-        ticketSection: '125',
-        ticketRow:"11",
-        ticketSeat: '76',
-        eventName:'',
-        tourName: 'COLDPLAY: MUSIC OF THE SPHERES WORLD TOUR 2025',
-        ticketDatePlace: 'Sat, Aug 30, 5pm - Wembley Stadium'
-    },
-    {
-        label:'General Admission',
-        ticketImage:"/Assets/images/coldplay.jpg",
-        ticketSection: '125',
-        ticketRow:"11",
-        ticketSeat: '77',
-        eventName:'',
-        tourName: 'COLDPLAY: MUSIC OF THE SPHERES WORLD TOUR 2025',
-        ticketDatePlace: 'Sat, Aug 30, 5pm - Wembley Stadium'
-    }
-]
+function eachTicket() {
+  const cards = JSON.parse(localStorage.getItem("cards")) || [];
+  ticketContainer.innerHTML = ""; // clear previous tickets
 
-const ticketContainer = document.querySelector('.ticketContainer')
-ticketContainer.innerHTML = ticketPages.map((ticketpage) => 
-  `<section
-      class="text-white bg-white rounded-2xl border-2 border-gray-100 w-[20rem] shrink-0">
-      <div class="bg-blue-600 text-center rounded-t-2xl">
-        <p class="py-2">
-            ${ticketpage.label}
-        </p>
-        </div>
+  if (cards.length === 0) {
+    ticketContainer.innerHTML = "<p class='text-gray-500 text-center mt-4'>No tickets available</p>";
+    return;
+  }
 
-        <div class="bg-blue-600 flex justify-around py-6">
-        <div>
-          <p class="font-semibold text-sm text-center">SEC</p>
-          <p class="font-bold text-lg text-center">${ticketpage.ticketSection}</p>
-        </div>
+  cards.forEach(cardDetails => {
+    ticketContainer.innerHTML += `
+      <section class="bg-white rounded-2xl border-2 border-gray-100 w-[20rem] shrink-0">
+        <!-- Section & Row -->
+        <div class="bg-blue-600 flex justify-around py-6 text-white">
+          <div>
+            <p class="font-semibold text-sm text-center">SEC</p>
+            <p class="font-bold text-lg text-center">${cardDetails.section || "-"}</p>
+          </div>
           <div>
             <p class="font-semibold text-sm text-center">ROW</p>
-            <p class="font-bold text-lg text-center">${ticketpage.ticketRow}</p>
-          </div>
-          <div>
-            <p class="font-semibold text-sm text-center">SEAT</p>
-            <p class="font-bold text-lg text-center">${ticketpage.ticketSeat}</p>
-          </div>
-        </div>      
-        <div class="relative">
-        <img
-            src="${ticketpage.ticketImage}"
-            alt="Beyoncé concert"
-            class="w-full h-[11rem] object-cover"
-        />
-        <div class="absolute bottom-0 w-full  bg-gradient-to-b from-black/10 to-black/95 text-white pb-1">
-            <div class="flex justify-center gap-1 place-items-center px-1">
-              <p class="text-lg font-semibold">${ticketpage.eventName} </p>
-              <p class="text-lg font-semibold text-center"> ${ticketpage.tourName}</p>
-            </div>
-            <p class="text-sm text-center">${ticketpage.ticketDatePlace}</p>
+            <p class="font-bold text-lg text-center">${cardDetails.row || "-"}</p>
           </div>
         </div>
 
-        <div class="">
-          <p class="text-black text-center font-semibold py-3">Lower Level</p>
-          <div class="bg-blue-600 mx-10 rounded flex justify-center gap-1 h-10 place-items-center">
-          <img src="/Assets/images/barcode_scanner_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.png" alt="">
-          <p class="font-semibold text-center py-3">View Ticket</p>
+        <!-- Ticket Image & Info -->
+        <div class="relative">
+          <img src="${cardDetails.image}" alt="Ticket Image" class="w-full h-[11rem] object-cover"/>
+          <div class="absolute bottom-0 w-full bg-gradient-to-b from-black/10 to-black/95 text-white pb-1">
+            <div class="flex justify-center gap-1 items-center px-1">
+              <p class="text-lg font-semibold">${cardDetails.eventName || "-"}</p>
+            </div>
+            <p class="text-sm text-center">${cardDetails.datePlace || "-"}</p>
           </div>
-          <p class="font-bold text-blue-600 py-4 text-center">
-            Ticket Details
-          </p>
         </div>
-        <div class="bg-blue-600 text-center rounded-b-2xl h-5 w-full"></div>
-  </section>`
-)
-.join('');
+      </section>`;
+  });
+}
+
 
 const bar = document.querySelector('.transferBar');
 

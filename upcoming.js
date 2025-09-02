@@ -10,31 +10,35 @@ function blueBg() {
 }
 blueBg();
 
-const picture = [
-  {
-    mainImage: "/Assets/images/coldplay.jpg",
-    eventName: "COLDPLAY: MUSIC OF THE SPHERES WORLD TOUR 2025",
-    eventDate: "Sat, 30 Aug 2025, 17:00 - Wembley Stadium",
-    ticketNumber: "2 tickets",
-    ticketIcon: "/Assets/icons/tickets.png",
-  },
-];
+const pictureDiv = document.getElementById('picture')
 
-let pictureDiv = document.getElementById("picture");
-pictureDiv.innerHTML = `
+function updateCounter() {
+  const cards = JSON.parse(localStorage.getItem("cards")) || [];
+  var ticketCount = cards.length;
+
+  if (ticketCount === 0) {
+    pictureDiv.innerHTML = "<p class='text-center text-gray-500 mt-4'>No tickets available</p>";
+    return;
+  };
+
+   const lastCard = cards[cards.length - 1];
+
+ 
+  pictureDiv.innerHTML = `
   <a href="/ticketmaster.html">
     <div class="relative">
-      <img src="${picture[0].mainImage}" alt="" class="w-full object-cover h-[14rem]">
+      <img src="${lastCard.image}" alt="" class="w-full object-cover h-[14rem]">
       <div class="absolute bottom-0 w-full text-white px-3 bg-black/20">
         <div class="place-items-start">
-          <p class="text-lg font-semibold">${picture[0].eventName} </p>
-          <p class="text-[14px] font-semibold text-start"> ${picture[0].eventDate}</p>
+          <p class="text-lg font-semibold">${lastCard.eventName || "-"} </p>
+          <p class="text-[14px] font-semibold text-start"> ${lastCard.datePlace || "-"}</p>
         </div>
         <div class="flex justify-start gap-1 place-items-center">
-          <img src="${picture[0].ticketIcon}" class="h-5 w-4 pb-1">
-          <p class="text-sm text-center font-semibold">${picture[0].ticketNumber}</p>
+          <img src="/Assets/icons/tickets.png" class="h-5 w-4 pb-1">
+          <p class="text-sm text-center font-semibold">${ticketCount} ${ticketCount > 1 ? "tickets" : "ticket"}</p>
         </div>
      </div>
    </div>
  </a>
 `
+}

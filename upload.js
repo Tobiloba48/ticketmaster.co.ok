@@ -89,28 +89,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Create card element
         function createCard(cardData) {
-                const card = document.createElement("div");
-                card.classList.add(
-                "max-w-md",
-                "border",
-                "rounded-xl",
-                "overflow-hidden",
-                "shadow-lg",
-                "my-4",
-                "bg-white"
-                );
+            const card = document.createElement("div");
+            card.classList.add(
+            "max-w-md",
+            "border",
+            "rounded-xl",
+            "overflow-hidden",
+            "shadow-lg",
+            "my-4",
+            "bg-white"
+            );
 
-                if (cardData.image) {
+            if (cardData.image) {
                 const img = document.createElement("img");
                 img.src = cardData.image;
                 img.alt = "Ticket Image";
                 img.classList.add("w-full", "h-48", "object-cover");
                 card.appendChild(img);
-                }
+            }
 
-                const details = document.createElement("div");
-                details.classList.add("p-4");
-                details.innerHTML = `
+            const details = document.createElement("div");
+            details.classList.add("p-4");
+            details.innerHTML = `
                 <h3 class="text-xl font-bold mb-2">${cardData.eventName || "Untitled Event"}</h3>
                 <p><span class="font-semibold">Date & Place:</span> ${cardData.datePlace || "-"}</p>
                 <p><span class="font-semibold">Section:</span> ${cardData.section || "-"}</p>
@@ -118,25 +118,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><span class="font-semibold">Ticket Type:</span> ${cardData.type || "-"}</p>
                 <p><span class="font-semibold">Category:</span> ${cardData.category || "-"}</p>
                 <p><span class="font-semibold">Seat Type:</span> ${cardData.seat || "-"}</p>
-                `;
+            `;
 
-                // Delete button
-                const deleteBtn = document.createElement("button");
-                deleteBtn.textContent = "Delete";
-                deleteBtn.classList.add("mt-3", "bg-red-500", "text-white", "px-3", "py-1", "rounded-lg");
-                deleteBtn.addEventListener("click", () => {
+            // Delete button
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.classList.add("mt-3", "bg-red-500", "text-white", "px-3", "py-1", "rounded-lg");
+            deleteBtn.addEventListener("click", () => {
                 const index = Array.from(results.children).indexOf(card);
                 deleteCard(index);
-                });
+            });
 
-                details.appendChild(deleteBtn);
-                card.appendChild(details);
-                results.appendChild(card);
+            details.appendChild(deleteBtn);
+            card.appendChild(details);
+            results.appendChild(card);
 
-                updateCounter();
-            }
+            updateCounter();
+        }
     }
 });
-
-
-//////

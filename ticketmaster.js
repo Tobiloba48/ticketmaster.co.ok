@@ -14,7 +14,7 @@ function closeBar() {
 // Ticket display for any page that has #ticketContainer
 const ticketContainer = document.getElementById('ticketContainer')
 if(ticketContainer) {
-    eachTicket();
+  eachTicket();
 }
 
 // Shared function to render tickets in horizontal scroll
@@ -67,7 +67,7 @@ function eachTicket() {
           <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/95"></div>
           <div class="absolute bottom-0 w-full text-white pb-1">
             <div class="flex justify-center gap-1 place-items-start px-1">
-              <p class="text-lg font-semibold">${cardDetails.eventName || "-"} </p>
+              <p class="text-lg font-semibold text-center">${cardDetails.eventName || "-"} </p>
             </div>
             <p class="text-[13px] text-center pl-1">${cardDetails.datePlace || "-"}</p>
           </div>

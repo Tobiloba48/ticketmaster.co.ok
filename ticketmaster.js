@@ -1,5 +1,5 @@
 const bar = document.querySelector('.transferBar');
-
+const overlay = document.getElementById('overlay'); // must be here before openBar()
 
 function openBar() {   
   bar.classList.remove('hidden');
@@ -10,6 +10,12 @@ function closeBar() {
   bar.classList.add('hidden');
   overlay.classList.add('hidden')
 }
+
+document.querySelector('.the-Bar').addEventListener('click', function (e) {
+  e.preventDefault();
+  console.log("Transfer button clicked ✅");
+  openBar();
+});
 
 // Ticket display for any page that has #ticketContainer
 const ticketContainer = document.getElementById('ticketContainer')

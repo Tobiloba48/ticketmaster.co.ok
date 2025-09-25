@@ -40,4 +40,4 @@ function updateCounter() {
      </div>
    </div>
  </a>
-`}
+`};

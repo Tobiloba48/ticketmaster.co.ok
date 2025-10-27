@@ -4,8 +4,38 @@ document.addEventListener("DOMContentLoaded", () => {
   const uploadSection = document.getElementById('uploadSection');
   const uploadMenu = document.getElementById('uploadMenu');
   const closeMenu = document.getElementById('close');
+  
 
-    //results.classList.add("mt-6");
+    const country = document.getElementById('country');
+
+    // Popup flags
+    const popupUS = document.getElementById('popup-us-logo');
+    const popupUK = document.getElementById('popup-uk-logo');
+
+    // Header flags
+    const headerUS = document.getElementById('header-us-logo');
+    const headerUK = document.getElementById('header-uk-logo');
+
+    country.addEventListener("click", function () {
+        const isUSShowing = popupUS.classList.contains('block');
+
+        // Toggle popup flags
+        popupUS.classList.toggle('hidden', isUSShowing);
+        popupUS.classList.toggle('block', !isUSShowing);
+        popupUK.classList.toggle('hidden', !isUSShowing);
+        popupUK.classList.toggle('block', isUSShowing);
+
+        // Toggle header flags
+        headerUS.classList.toggle('hidden', isUSShowing);
+        headerUS.classList.toggle('block', !isUSShowing);
+        headerUK.classList.toggle('hidden', !isUSShowing);
+        headerUK.classList.toggle('block', isUSShowing);
+
+        // Button background color based on active flag
+        country.classList.toggle('bg-red-600', !isUSShowing); // US mode
+        country.classList.toggle('bg-blue-600', isUSShowing); // UK mode
+    });
+
     
 
     if (form && results && uploadSection && uploadMenu && closeMenu) {

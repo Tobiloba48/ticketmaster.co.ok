@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Enable standalone (app) mode on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Your App Name">
+
+    <!-- App Icon (change to your icon path) -->
+    <link rel="apple-touch-icon" href="icon.png">
+
     <link rel="stylesheet" href="/Assets/css/index.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/tailwind.js"></script>
@@ -116,6 +126,12 @@
 
 
       
+    <script>
+      if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+
+    </script>
     <script src="/upload.js"></script>
     <script src="/upcoming.js"></script>
   </body>

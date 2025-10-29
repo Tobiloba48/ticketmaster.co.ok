@@ -9,7 +9,7 @@ theBar.addEventListener("click", function ticketPick () {
     <div>
       <div class="mb-1">
         <div class="border-b border-gray-3500">
-          <p class="text-center font-semibold text-lg py-1 text-gray-500">
+          <p class="text-center font-semibold text-lg py-2 text-gray-500">
             SELECT TICKETS TO TRANSFER
           </p>
         </div>
@@ -24,7 +24,7 @@ theBar.addEventListener("click", function ticketPick () {
         </div>
       </div>
       <div class="ticketpick flex justify-start gap-4 ml-10"></div>  
-      <div class="flex justify-between mx-4 mt-3 mb-2">
+      <div class="flex justify-between px-4 mt-3 mb-2 border-t-2 border-gray-100 pt-24">
         <p class="selectedCount font-semibold text-lg text-center"></p>
         <a href="#" id="showForm" class="text-sm text-blue-600 
           font-semibold text-center flex place-items-center">
@@ -50,6 +50,7 @@ theBar.addEventListener("click", function ticketPick () {
           </div>
         </div>
       </div>
+      
     `;
   });
 

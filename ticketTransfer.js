@@ -27,7 +27,7 @@ document.addEventListener("click", function (e) {
 
       transferForm.innerHTML = `
         <div>
-          <p class="font-bold text-center py-1 border-b border-gray-400">
+          <p class="font-bold text-center py-2 border-b border-gray-400">
             TRANSFER TICKETS
           </p>
           <div class="px-4">
@@ -41,22 +41,27 @@ document.addEventListener("click", function (e) {
             </p>
           </div>
           <form class="pb-3 border-b border-gray-500 px-4">
-            <label class="block font-semibold pb-1 text-sm pt-2">First Name</label>
+            <label class="block font-semibold pb-1 text-sm pt-3">First Name</label>
             <input type="text" required class="border border-black w-full px-4 
               py-1 rounded-lg" placeholder="First Name"
             >
 
-            <label class="block font-semibold pb-1 text-sm pt-2">Last Name</label>
+            <label class="block font-semibold pb-1 text-sm pt-3">Last Name</label>
             <input type="text" required class="border border-black w-full px-4 
               py-1 rounded-lg" placeholder="Last Name"
             >
 
-            <label class="block font-semibold pb-1 text-sm pt-2">Email or Mobile Number</label>
+            <label class="block font-semibold pb-1 text-sm pt-3">Email or Mobile Number</label>
             <input type="text" required class="border border-black w-full px-4 py-1 rounded-lg" 
               placeholder="Email or Phone Number"
             >
+
+            <label class="block font-semibold pb-1 text-sm pt-3">Add a Message <span class="font-normal">(Optional)</span></label>
+            <input type="text" required class="border border-black w-full px-4 pt-1 pb-20 rounded-lg" 
+              placeholder="Note"
+            >
           </form>
-          <div class="flex justify-between p-2">
+          <div class="flex justify-between px-2 pt-3">
             <a href="#" class="backToPickBar text-blue-600 font-bold flex place-items-center">
               <img src="/Assets/icons/left (1).png" class="h-7 w-5" alt="">
               BACK

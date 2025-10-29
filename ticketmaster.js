@@ -42,11 +42,11 @@ function eachTicket() {
       class="text-white bg-white rounded-2xl border-2 border-gray-100 w-[20rem] shrink-0">
       <div class="bg-blue-600 text-center rounded-t-2xl">
         <p class="pt-2">
-            ${cardDetails.category}
+           ${cardDetails.category}
         </p>
         </div>
 
-        <div class="bg-blue-600 flex justify-around py-4">
+        <div class="bg-blue-600 flex justify-around py-5">
           <div>
             <p class="font-semibold text-sm text-center">SEC</p>
             <p class="font-bold text-xl text-center">${cardDetails.section || "-"}</p>
@@ -67,7 +67,7 @@ function eachTicket() {
           <img
             src="${cardDetails.image || "UPLOAD TICKET IMAGE"}"
             alt="Beyoncé concert"
-            class="w-full h-[13rem] object-fit"
+            class="w-full h-[15rem] object-fit"
           />
 
           <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/95"></div>
@@ -80,7 +80,7 @@ function eachTicket() {
         </div>
 
         <div class="">
-          <p class="text-black text-center font-semibold py-3">${cardDetails.type}</p>
+          <p class="text-black text-center font-semibold py-4">${cardDetails.type}</p>
           <div class="bg-blue-600 mx-10 rounded flex justify-center gap-1 h-10 place-items-center">
             <img src="/Assets/images/barcode_scanner_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.png" alt="">
             <p class="font-semibold text-center py-3">View Ticket</p>
@@ -94,3 +94,6 @@ function eachTicket() {
   });
 };
 
+// 
+
+// 
